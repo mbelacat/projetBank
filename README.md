@@ -81,3 +81,4 @@ Si vous devez démarrer vous même une session sur une page, vous avez accès à
 Si vous un service ou autre fichier doit être accessible dans toutes les pages, il convient alors de le charger dans l'index.php, il sera alors accessible partout puisque le routeur fait de l'index le point de départ de l'application.
 
 Si un fichier n'est accessible que dans un contrôleur en particulier, alors il convient de le charger dans le contrôleur en question avant de déclarer les fonctions de celui-ci.
+# projetBank
