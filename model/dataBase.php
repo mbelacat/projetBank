@@ -3,7 +3,7 @@
  * Class to connect to the data base
  */
 class dataBase {
-  const host  = "localhost:8888";
+  const host  = "localhost";
   const dbName = "projetBank";
   const login = "root";
   const mdp = "";

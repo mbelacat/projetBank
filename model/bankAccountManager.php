@@ -8,15 +8,15 @@ class bankAccountManager
 {
   private $_db;
 
-  public function setDb($connection) {
-    $this->_db = $connection;
+  public function setDb($db) {
+    $this->_db = $db;
   }
 
   public function getDb() {
     return $this->_db;
   }
 
-  public function getAccount() {
+  public function getAccounts() {
     $query = $this->getDb()->query('SELECT * FROM bankAccount');
     //Si on souhaite récupérer directement des objets
     $data = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
