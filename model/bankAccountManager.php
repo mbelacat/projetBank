@@ -45,6 +45,8 @@ class bankAccountManager
     $this->setDb(dataBase::BD());
   }
 
+  
+
   public function hydrate(array $data) {
     if(!empty($data)) {
       foreach ($data as $key => $value) {
