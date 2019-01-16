@@ -1,11 +1,9 @@
 <?php
-
 /**
  *
  */
-class adminController 
+class adminController
 {
-
   public function loginUser() {
     echo "Voici la login";
   }
