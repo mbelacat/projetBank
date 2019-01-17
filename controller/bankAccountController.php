@@ -69,7 +69,9 @@ class bankAccountController
         $balance = $bankAccountManagerOK->getBalance();
         $newBalance = $balance + $_POST["amount"];
         $bankAccountManagerOK->setBalance($newBalance);
-        $bankAccountManager->updateAccount($bankAccountManagerOK);
+        if($bankAccountManager->updateAccount($bankAccountManagerOK)){
+          redirectTo("bankAccount");
+        }
       }
     }
     require "view/transfertAccountFormView.php";
