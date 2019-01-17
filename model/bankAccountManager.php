@@ -51,7 +51,7 @@ class bankAccountManager
     $query = $this->getDb()->prepare("INSERT INTO bankAccount(balance, clientId) VALUES(:balance, :clientId)");
     $result = $query->execute([
       "balance" => $bankAccount->getBalance(),
-      "clientId" => $bankAccount->getClientId(),
+      "clientId" => 2,
     ]);
     return $result;
   }
