@@ -46,11 +46,9 @@ class bankAccount
 
   public function transfert(int $amount,bankAccount $bankAccount){
     if($this->balance > 0  &&  (self::OVERDRAFT + $this->balance - $amount) > 0){
-        if($this->withdrawal($amount) && $bankAccount->credit()){
-          // demander à thomas
-          return true;
-        }
-
+      if($this->withdrawal($amount) && $bankAccount->credit()){
+        return true;
+      }
     }
   }
 

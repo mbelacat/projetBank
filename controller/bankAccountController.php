@@ -34,7 +34,7 @@ class bankAccountController
        }
        echo "Vous avez atteint le decouvert autorisé!";
      }
-     require "view/form/withdrawalAccountForm.php";
+     require "view/withdrawalAccountFormView.php";
   }
 
   public function makeCredit(){
