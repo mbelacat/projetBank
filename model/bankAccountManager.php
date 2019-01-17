@@ -48,10 +48,11 @@ class bankAccountManager
   }
 
   public function addAccount(bankAccount $bankAccount) {
-    $query = $this->getDb()->prepare("INSERT INTO bankAccount(balance, clientId) VALUES(:balance, :clientId)");
+    $query = $this->getDb()->prepare("INSERT INTO bankAccount(balance, clientId, accountName) VALUES(:balance, :clientId, :accountName)");
     $result = $query->execute([
       "balance" => $bankAccount->getBalance(),
       "clientId" => 2,
+      "accountName" => $bankAccount->getAccountName(),
     ]);
     return $result;
   }
