@@ -20,11 +20,41 @@ class bankAccountManager
     $query = $this->getDb()->query('SELECT * FROM bankAccount');
     //Si on souhaite récupérer directement des objets
     $data = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
+<<<<<<< HEAD
 
     return $data;
   }
 
   //Fonction pour ajouter un compte, elle attend explicitement un objet et non pas un tableau
+=======
+    //Sinon on peut utiliser fetch assoc mais il faut créer soi même les objets
+    //On transforme alors chaque entrée du tableau en objet chat en l'hydratant
+    // $data = $query->fetchAll(PDO::FETCH_ASSOC);
+    // foreach ($data as $key => $chat) {
+    //   $data[$key] = new chat($chat);
+    // }
+    return $data;
+  }
+
+  public function getAccount($id){
+    $query = $this->getDb()->prepare('SELECT * FROM bankAccount WHERE id = ?');
+    $query->execute([$id]);
+    $bankAccount = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
+    return $bankAccount;
+  }
+
+  public function updateAccount(bankAccount $bankAccount){
+
+    $query = $this->getDb()->prepare("UPDATE bankAccount SET balance = :balance WHERE id = :id");
+    $result = $query->execute([
+        "id" => $bankAccount->getId(),
+        "balance" => $bankAccount->getBalance()
+    ]);
+    return $result;
+    $query->closeCursor();
+  }
+
+>>>>>>> 995b378d9eb57e4d67b0ff1ceedf86254ba85fde
   public function addAccount(bankAccount $bankAccount) {
     $query = $this->getDb()->prepare("INSERT INTO bankAccount(balance, clientId) VALUES(:balance, :clientId)");
     $result = $query->execute([
