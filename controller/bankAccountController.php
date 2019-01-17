@@ -19,7 +19,6 @@ class bankAccountController
     require "view/bankAccountView.php";
   }
 
-<<<<<<< HEAD
   public function addNewAccount()
   {
     $bankAccountManager = new bankAccountManager();
@@ -32,7 +31,7 @@ class bankAccountController
     // var_dump($bank);
     require "view/form/createAccountForm.php";
   }
-=======
+
   public function makeWithdrawal(){
      if(!empty($_POST)){
        $bankAccountManager = new bankAccountManager();
@@ -71,12 +70,6 @@ class bankAccountController
   public function makeTransfert(){
     require "view/form/transfertAccountForm.php";
   }
-
-
->>>>>>> 995b378d9eb57e4d67b0ff1ceedf86254ba85fde
 }
-
-
-
 
  ?>

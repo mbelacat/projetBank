@@ -20,12 +20,11 @@ function getRoutes() {
       "admin",
       "loginUser",
     ],
-<<<<<<< HEAD
+
     "addAccount" => [
       "bankAccount",
       "addNewAccount"
     ]
-=======
 
     "bankAccounts" => [
       "bankAccount",
@@ -60,8 +59,6 @@ function getRoutes() {
        "recepientId" =>[ "integer"]],
        // "status" => "user",
     ],
-
->>>>>>> 995b378d9eb57e4d67b0ff1ceedf86254ba85fde
   ];
 }
 
