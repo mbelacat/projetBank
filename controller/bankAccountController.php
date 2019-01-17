@@ -16,7 +16,8 @@ class bankAccountController
   public function showBankAccount(){
     $bankAccountManager = new bankAccountManager();
     $id = intval($_GET['id']);
-    $bankAccounts = $bankAccountManager->getAccount($id);
+    $bankAccount = $bankAccountManager->getAccount($id);
+    var_dump($bankAccount);
     require "view/bankAccountView.php";
   }
 
@@ -39,8 +40,6 @@ class bankAccountController
   }
 
   public function makeCredit(){
-
-
      if(!empty($_POST)){
        $bankAccountManager = new bankAccountManager();
        $id = intval($_GET['id']);
@@ -56,7 +55,24 @@ class bankAccountController
   }
 
   public function makeTransfert(){
-    require "view/form/transfertAccountForm.php";
+    $bankAccountManager = new bankAccountManager();
+    $bankAccounts = $bankAccountManager->getAccounts();
+    $bankAccountManagerOK = $bankAccountManager->getAccount($_GET['id']);
+    $bankAccountManagerOK = $bankAccountManagerOK[0];
+    $balance = $bankAccountManagerOK->getBalance();
+    if($bankAccountManagerOK->withdrawal(intval($_POST["amount"]))){
+      $newBalance = $balance - $_POST["amount"];
+      $bankAccountManagerOK->setBalance($newBalance);
+      if($bankAccountManager->updateAccount($bankAccountManagerOK)){
+        $bankAccountManagerOK = $bankAccountManager->getAccount($_POST['recepientId']);
+        $bankAccountManagerOK = $bankAccountManagerOK[0];
+        $balance = $bankAccountManagerOK->getBalance();
+        $newBalance = $balance + $_POST["amount"];
+        $bankAccountManagerOK->setBalance($newBalance);
+        $bankAccountManager->updateAccount($bankAccountManagerOK);
+      }
+    }
+    require "view/transfertAccountFormView.php";
   }
 
   public function deleteBankAccount(){
@@ -67,7 +83,6 @@ class bankAccountController
       redirectTo("bankAccount");
     }
   }
-
 }
 
 

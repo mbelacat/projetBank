@@ -28,6 +28,7 @@ function getRoutes() {
     "bankAccount" => [
       "bankAccount",
       "showBankAccount",
+      ["id" => ["integer"]],
       // "status" => "user"
     ],
 
@@ -49,7 +50,8 @@ function getRoutes() {
       "bankAccount",
       "makeTransfert",
       ["id" => ["integer"],
-       "recepientId" =>[ "integer"]],
+       // "recepientId" =>[ "integer"]
+     ],
        // "status" => "user",
     ],
 
