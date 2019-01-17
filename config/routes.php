@@ -24,7 +24,7 @@ function getRoutes() {
     "addAccount" => [
       "bankAccount",
       "addNewAccount"
-    ]
+    ],
 
     "bankAccounts" => [
       "bankAccount",
