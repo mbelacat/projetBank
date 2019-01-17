@@ -6,7 +6,7 @@
 class bankAccount
 {
   protected $id;
-  protected $balance = 50;
+  protected $balance;
   protected $clientId;
 
   const OVERDRAFT = 1000 ;
@@ -22,11 +22,18 @@ class bankAccount
      return $this->id = $id;
   }
 
-  public function setBalance($balance) {
+  public function setBalance50(int $balance)
+  {
+    if ($this->balance >= self::MIN_BALANCE) {
+      $this->balance = $balance;
+    }
+  }
+
+  public function setBalance(int $balance) {
     return $this->balance = $balance;
   }
 
-  public function setClientId($clientId) {
+  public function setClientId(int $clientId) {
     return $this->clientId = $clientId;
   }
 

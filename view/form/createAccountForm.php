@@ -2,7 +2,7 @@
 <div class="container col-6">
 <!-- form action a remplir quand toutes les pages seront crées-->
     <h2>Creer un compte</h2>
-    <form method="post">
+    <form method="post" action="">
         <div class="form-group">
             <label for="lastName">Nom du client</label>
             <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Dupond" >

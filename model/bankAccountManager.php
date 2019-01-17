@@ -24,28 +24,15 @@ class bankAccountManager
     return $data;
   }
 
-
-
-  //Fonction pour ajouter un compte, elle attend explicitement un objet chat et non pas un tableau
+  //Fonction pour ajouter un compte, elle attend explicitement un objet et non pas un tableau
   public function addAccount(bankAccount $bankAccount) {
     $query = $this->getDb()->prepare("INSERT INTO bankAccount(balance, clientId) VALUES(:balance, :clientId)");
     $result = $query->execute([
       "balance" => $bankAccount->getBalance(),
-      "clientId" => $bankAccount->getClientId(),
+      "clientId" => 2,
     ]);
     return $result;
   }
-
-  public function updateAccount(bankAccount $bankAccount) {
-  $db = getDb();
-  $query = $db->prepare("UPDATE bankAccount SET account_balance = :account_ WHERE ");
-  $result = $query->execute([
-    "" => $[""],
-    "_id" => $id
-  ]);
-  $query->closeCursor();
-  return $result;
-}
 
   function __construct()
   {
