@@ -51,7 +51,7 @@ class bankAccountController
        $bankAccountManager->updateAccount($bankAccountManagerOK);
        redirectTo("bankAccounts");
     }
-    require "view/form/creditAccountForm.php";
+    require "view/creditAccountFormView.php";
   }
 
   public function makeTransfert(){
