@@ -14,8 +14,6 @@
 //]
 function getRoutes() {
   return [
-
-
     "login" => [
       "admin",
       "loginUser",
@@ -54,6 +52,12 @@ function getRoutes() {
        "recepientId" =>[ "integer"]],
        // "status" => "user",
     ],
+
+    "delete"=> [
+      "bankAccount",
+      "deleteBankAccount",
+      ["id" => ["integer"]],
+    ]
 
   ];
 }

@@ -15,7 +15,8 @@ class bankAccountController
 
   public function showBankAccount(){
     $bankAccountManager = new bankAccountManager();
-    $bankAccounts = $bankAccountManager->getAccount();
+    $id = intval($_GET['id']);
+    $bankAccounts = $bankAccountManager->getAccount($id);
     require "view/bankAccountView.php";
   }
 
@@ -58,6 +59,14 @@ class bankAccountController
     require "view/form/transfertAccountForm.php";
   }
 
+  public function deleteBankAccount(){
+    if(isset($_GET['id'])){
+      $bankAccountManager = new bankAccountManager();
+      $id = intval($_GET['id']);
+      $bankAccountManagerOK = $bankAccountManager->delete($_GET['id']);
+      redirectTo("bankAccount");
+    }
+  }
 
 }
 

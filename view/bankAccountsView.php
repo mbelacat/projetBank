@@ -11,6 +11,7 @@ include "view/template/header.php";
             <th>Retirer </th>
             <th>Créditer</th>
             <th>Transférer</th>
+            <th>Supprimer</th>
           </tr>
           <tbody>
               <?php
@@ -22,6 +23,8 @@ include "view/template/header.php";
           <td scope="row"><a <?php  setHref("withdrawal",["id" => $bankAccount->getId()])?> class="btn btn-danger btn">Retirer</a></td>
           <td scope="row"><a <?php  setHref("credit",["id" => $bankAccount->getId()])?> class="btn btn-danger btn">Créditer</a></td>
           <td scope="row"><a <?php  setHref("transfert",["id" => $bankAccount->getId()]) ?> class="btn btn-danger btn">Transférer</a></td>
+          <td scope="row"><a <?php  setHref("delete",["id" => $bankAccount->getId()]) ?> class="btn btn-danger btn">Supprimer</a></td>
+
         </tr>
       </thead>
       <?php

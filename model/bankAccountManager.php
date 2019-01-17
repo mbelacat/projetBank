@@ -29,11 +29,13 @@ class bankAccountManager
     return $data;
   }
 
-  public function getAccount($id){
+  public function getAccount(int $id){
     $query = $this->getDb()->prepare('SELECT * FROM bankAccount WHERE id = ?');
     $query->execute([$id]);
     $bankAccount = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
     return $bankAccount;
+    $query->closeCursor();
+
   }
 
   public function updateAccount(bankAccount $bankAccount){
@@ -53,6 +55,12 @@ class bankAccountManager
       "balance" => $bankAccount->getBalance(),
       "clientId" => $bankAccount->getClientId(),
     ]);
+    return $result;
+  }
+
+  public function delete(int $id){
+    $query = $this->getDb()->prepare("DELETE FROM bankAccount WHERE id = ?");
+    $result = $query->execute([$id]);
     return $result;
   }
 
