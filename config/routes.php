@@ -14,14 +14,47 @@
 //]
 function getRoutes() {
   return [
-    "bankAccount" => [
-      "bankAccount",
-      "showBankAccount"
-    ],
+
+
     "login" => [
       "admin",
       "loginUser",
-    ]
+    ],
+
+    "bankAccounts" => [
+      "bankAccount",
+      "showBankAccounts",
+      // "status" => "admin"
+    ],
+
+    "bankAccount" => [
+      "bankAccount",
+      "showBankAccount",
+      // "status" => "user"
+    ],
+
+    "withdrawal"=> [
+      "bankAccount",
+      "makeWithdrawal",
+      ["id" => ["integer"]],
+      // "status" => "user",
+    ],
+
+    "credit"=> [
+      "bankAccount",
+      "makeCredit",
+      ["id" => ["integer"]],
+      // "status" => "user",
+    ],
+
+    "transfert"=> [
+      "bankAccount",
+      "makeTransfert",
+      ["id" => ["integer"],
+       "recepientId" =>[ "integer"]],
+       // "status" => "user",
+    ],
+
   ];
 }
 
