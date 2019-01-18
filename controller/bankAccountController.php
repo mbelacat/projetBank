@@ -13,10 +13,19 @@ class bankAccountController
     require "view/bankAccountsView.php";
   }
 
+  // public function showBankAccount(){
+  //   $bankAccountManager = new bankAccountManager();
+  //   $id = intval($_GET['id']);
+  //   $bankAccount = $bankAccountManager->getAccount($id);
+  //   var_dump($bankAccount);
+  //   require "view/bankAccountView.php";
+  // }
+
   public function showBankAccount(){
     $bankAccountManager = new bankAccountManager();
     $id = intval($_GET['id']);
-    $bankAccount = $bankAccountManager->getAccount($id);
+    $bankAccountsUser = $bankAccountManager->getAccountsUser($id);
+    var_dump($bankAccountsUser);
     require "view/bankAccountView.php";
   }
 

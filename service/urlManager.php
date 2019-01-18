@@ -37,6 +37,11 @@ function setHref($target, $parameters = false) {
   echo "href='$action'";
 }
 
+function setSrc($target, $parameters = false) {
+  $action = makeAction($target, $parameters);
+  echo "src='$action'";
+}
+
 //redirection based on absolute url
 function redirectTo($target, $parameters = false) {
   $url = makeAction($target, $parameters);

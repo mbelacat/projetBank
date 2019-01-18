@@ -41,6 +41,18 @@ class bankAccountManager
 
   }
 
+  public function getAccountsUser(int $clientId){
+    $query = $this->getDb()->prepare('SELECT * FROM bankAccount AS b INNER JOIN client AS c ON b.clientId = c.id WHERE b.clientId = ?');
+    $query->execute([2]);
+    $bankAccount = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
+    // other way to have one account
+    // $query->setFetchMode(PDO::FETCH_CLASS, 'bankAccount');
+    // $bankAccount = $query->fetch();
+    return $bankAccount;
+    $query->closeCursor();
+
+  }
+
   public function updateAccount(bankAccount $bankAccount){
 
     $query = $this->getDb()->prepare("UPDATE bankAccount SET balance = :balance WHERE id = :id");
