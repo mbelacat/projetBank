@@ -24,6 +24,8 @@ function getRoutes() {
       "loginUser",
     ],
 
+// BANKACCOUNT
+
     "addAccount" => [
       "bankAccount",
       "addNewAccount"
@@ -37,11 +39,17 @@ function getRoutes() {
 
     "bankAccount" => [
       "bankAccount",
-      "showBankAccount",
+      "showBankAccountUser",
       ["id" => ["integer"]],
       // "status" => "user"
     ],
 
+    "bankAccountUser" => [
+      "bankAccount",
+      "showBankAccountUser",
+      // ["id" => ["integer"]],
+      // "status" => "user"
+    ],
     "withdrawal"=> [
       "bankAccount",
       "makeWithdrawal",

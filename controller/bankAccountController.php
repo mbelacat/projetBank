@@ -21,7 +21,7 @@ class bankAccountController
   //   require "view/bankAccountView.php";
   // }
 
-  public function showBankAccount(){
+  public function showBankAccountUser(){
     $bankAccountManager = new bankAccountManager();
     $id = intval($_GET['id']);
     $bankAccountsUser = $bankAccountManager->getAccountsUser($id);
@@ -56,7 +56,7 @@ class bankAccountController
          $newBalance = $balance - $_POST["amount"];
          $bankAccountManagerOK->setBalance($newBalance);
          $bankAccountManager->updateAccount($bankAccountManagerOK);
-         redirectTo("bankAccounts");
+         redirectTo("bankAccountUser");
        }
        echo "Vous avez atteint le decouvert autorisé!";
      }
@@ -73,7 +73,7 @@ class bankAccountController
        $newBalance = $balance + $_POST["amount"];
        $bankAccountManagerOK->setBalance($newBalance);
        $bankAccountManager->updateAccount($bankAccountManagerOK);
-       redirectTo("bankAccounts");
+       redirectTo("bankAccountUser");
     }
     require "view/creditAccountFormView.php";
   }
@@ -94,7 +94,7 @@ class bankAccountController
         $newBalance = $balance + $_POST["amount"];
         $bankAccountManagerOK->setBalance($newBalance);
         if($bankAccountManager->updateAccount($bankAccountManagerOK)){
-          redirectTo("bankAccount");
+          redirectTo("bankAccountUser");
         }
       }
     }
@@ -106,7 +106,7 @@ class bankAccountController
       $bankAccountManager = new bankAccountManager();
       $id = intval($_GET['id']);
       $bankAccountManagerOK = $bankAccountManager->delete($_GET['id']);
-      redirectTo("bankAccount");
+      redirectTo("bankAccounts");
     }
   }
 }

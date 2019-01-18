@@ -15,7 +15,7 @@ include "view/template/header.php";
       <section class="">
         <h2> Donneés personnelles</h2>
         <div class="">
-          Nom: 
+          Nom:
         </div>
         <div class="">
           Prénom:
@@ -42,7 +42,7 @@ include "view/template/header.php";
             ?>
             <tr>
               <td scope="row"><?php echo $bankAccountUser->getAccountName() ;?></td>
-              <td scope="row"><?php echo $bankAccountUser->getBalance() ;?></td>
+              <td scope="row"><?php echo $bankAccountUser->getBalance() ;?> $</td>
               <td scope="row">
                 <div class="btn-group">
                   <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
