@@ -14,8 +14,6 @@
 //]
 function getRoutes() {
   return [
-
-
     "login" => [
       "admin",
       "loginUser",
@@ -35,6 +33,7 @@ function getRoutes() {
     "bankAccount" => [
       "bankAccount",
       "showBankAccount",
+      ["id" => ["integer"]],
       // "status" => "user"
     ],
 
@@ -56,9 +55,17 @@ function getRoutes() {
       "bankAccount",
       "makeTransfert",
       ["id" => ["integer"],
-       "recepientId" =>[ "integer"]],
+       // "recepientId" =>[ "integer"]
+     ],
        // "status" => "user",
     ],
+
+    "delete"=> [
+      "bankAccount",
+      "deleteBankAccount",
+      ["id" => ["integer"]],
+    ]
+
   ];
 }
 
