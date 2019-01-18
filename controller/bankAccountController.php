@@ -17,7 +17,6 @@ class bankAccountController
     $bankAccountManager = new bankAccountManager();
     $id = intval($_GET['id']);
     $bankAccount = $bankAccountManager->getAccount($id);
-    var_dump($bankAccount);
     require "view/bankAccountView.php";
   }
 

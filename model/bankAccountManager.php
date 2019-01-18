@@ -33,6 +33,9 @@ class bankAccountManager
     $query = $this->getDb()->prepare('SELECT * FROM bankAccount WHERE id = ?');
     $query->execute([$id]);
     $bankAccount = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
+    // other way to have one account
+    // $query->setFetchMode(PDO::FETCH_CLASS, 'bankAccount');
+    // $bankAccount = $query->fetch();
     return $bankAccount;
     $query->closeCursor();
 
