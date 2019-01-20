@@ -7,6 +7,11 @@ require "model/dataBase.php";
  */
 class bankAccountController
 {
+  public function welcome()
+  {
+    require "view/indexView.php";
+  }
+
   public function showBankAccounts(){
     $bankAccountManager = new bankAccountManager();
     $bankAccounts = $bankAccountManager->getAccounts();
@@ -25,16 +30,12 @@ class bankAccountController
   {
     $bankAccountManager = new bankAccountManager();
     $newBankAccount = new bankAccount($_POST);
-    $bankAccountManager->addAccount($newBankAccount);
-    var_dump($newBankAccount);
-    // var_dump($newBankAccount->setBalance50($balance));
-    // var_dump($newBankAccount);
-    // var_dump($newBankAccount->getAccountName());
-
-    // if () {
-    //   $bank = $bankAccountManager->addAccount($newBankAccount);
-    // }
-    require "view/form/createAccountForm.php";
+    $firstBalance = $newBankAccount->getBalance();
+    $firstBalance = intval($firstBalance);
+    if ($newBankAccount->setBalance50($firstBalance)) {
+      $bankAccountManager->addAccount($newBankAccount);
+    }
+    require "view/createAccountFormView.php";
   }
 
   public function makeWithdrawal(){
@@ -86,7 +87,7 @@ class bankAccountController
         $newBalance = $balance + $_POST["amount"];
         $bankAccountManagerOK->setBalance($newBalance);
         if($bankAccountManager->updateAccount($bankAccountManagerOK)){
-          redirectTo("bankAccount");
+          redirectTo("bankAccounts");
         }
       }
     }
@@ -98,7 +99,7 @@ class bankAccountController
       $bankAccountManager = new bankAccountManager();
       $id = intval($_GET['id']);
       $bankAccountManagerOK = $bankAccountManager->delete($_GET['id']);
-      redirectTo("bankAccount");
+      redirectTo("bankAccounts");
     }
   }
 }

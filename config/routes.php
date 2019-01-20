@@ -14,6 +14,11 @@
 //]
 function getRoutes() {
   return [
+    "" => [
+      "bankAccount",
+      "welcome",
+    ],
+
     "login" => [
       "admin",
       "loginUser",
@@ -21,7 +26,7 @@ function getRoutes() {
 
     "addAccount" => [
       "bankAccount",
-      "addNewAccount"
+      "addNewAccount",
     ],
 
     "bankAccounts" => [

@@ -31,7 +31,7 @@ class bankAccount
   }
 
   public function setBalance(int $balance) {
-    return $this->balance = $balance;
+      $this->balance = $balance;
   }
 
   public function setClientId(int $clientId) {
