@@ -14,7 +14,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script scr='public/js/plugins.js'></script>
 <script scr='public/js/main.js'></script>
-
+<!-- home page title effect -->
+<script src="https://unpkg.com/splitting@1.0.0/dist/splitting.js"></script>
+<script>
+    Splitting();
+</script>
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
 <script>
   window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;

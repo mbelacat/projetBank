@@ -35,13 +35,7 @@ class bankAccountController
     $newBankAccount = new bankAccount($_POST);
     $bankAccountManager->addAccount($newBankAccount);
     var_dump($newBankAccount);
-    // var_dump($newBankAccount->setBalance50($balance));
-    // var_dump($newBankAccount);
-    // var_dump($newBankAccount->getAccountName());
-
-    // if () {
-    //   $bank = $bankAccountManager->addAccount($newBankAccount);
-    // }
+    
     require "view/form/createAccountForm.php";
   }
 

@@ -20,10 +20,10 @@
 </head>
 
 <body>
-  <section class="jumbotron jumbotron-fluid bg-danger text-center">
+  <header class="bg-danger">
     <div class="container">
-      <h1 class="display-4">La banque</h1>
+      <h1 class="">La banque</h1>
     </div>
-  </section>
+  </header>
 
-  <main class="container">
+  <main class="container" h50>

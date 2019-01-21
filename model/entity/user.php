@@ -11,6 +11,7 @@ abstract class client
   protected $lastName;
   protected $password;
   protected $address;
+  protected $status;
 
 
   public function getId() {return $this->id;}
@@ -18,30 +19,33 @@ abstract class client
   public function getLastName() {return $this->lastName;}
   public function getPassword() {return $this->password;}
   public function getAddress() {return $this->address;}
+  public function getStatus() {return $this->status;}
+
 
 
   public function setId($id) {
     $this->id = $id;
   }
 
-  public function setId($fistNAme) {
+  public function setFistNAme($fistNAme) {
     $this->fistNAme = $fistNAme;
   }
 
-  public function setId($lastName) {
+  public function setLastName($lastName) {
     $this->lastName = $lastName;
   }
 
-  public function setId($password) {
+  public function setPassword($password) {
     $this->password = $password;
   }
 
-  public function setId($address) {
+  public function setAddress($address) {
     $this->address = $address;
   }
 
-
-
+  public function setStatus($status) {
+    $this->status = $status;
+  }
 
 
   public function hydrate(array $data) {

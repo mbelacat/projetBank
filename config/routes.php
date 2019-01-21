@@ -15,14 +15,20 @@
 function getRoutes() {
   return [
     "" => [
-      "admin",
+      "user",
       "welcome",
     ],
 
     "login" => [
-      "admin",
+      "user",
       "loginUser",
     ],
+
+    // "clients" =>[
+    //   "user",
+    //   "showUsers",
+    // ],
+
 
 // BANKACCOUNT
 
