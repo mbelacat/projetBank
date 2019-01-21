@@ -20,12 +20,6 @@ class bankAccountManager
     $query = $this->getDb()->query('SELECT * FROM bankAccount');
     //Si on souhaite récupérer directement des objets
     $data = $query->fetchAll(PDO::FETCH_CLASS, "bankAccount");
-    //Sinon on peut utiliser fetch assoc mais il faut créer soi même les objets
-    //On transforme alors chaque entrée du tableau en objet chat en l'hydratant
-    // $data = $query->fetchAll(PDO::FETCH_ASSOC);
-    // foreach ($data as $key => $chat) {
-    //   $data[$key] = new chat($chat);
-    // }
     return $data;
   }
 

@@ -7,6 +7,11 @@ require "model/dataBase.php";
  */
 class bankAccountController
 {
+  public function welcome()
+  {
+    require "view/indexView.php";
+  }
+
   public function showBankAccounts(){
     $bankAccountManager = new bankAccountManager();
     $bankAccounts = $bankAccountManager->getAccounts();
@@ -33,10 +38,12 @@ class bankAccountController
   {
     $bankAccountManager = new bankAccountManager();
     $newBankAccount = new bankAccount($_POST);
-    $bankAccountManager->addAccount($newBankAccount);
-    var_dump($newBankAccount);
-    
-    require "view/form/createAccountForm.php";
+    $firstBalance = $newBankAccount->getBalance();
+    $firstBalance = intval($firstBalance);
+    if ($newBankAccount->setBalance50($firstBalance)) {
+      $bankAccountManager->addAccount($newBankAccount);
+    }
+    require "view/createAccountFormView.php";
   }
 
   public function makeWithdrawal(){

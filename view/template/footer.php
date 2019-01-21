@@ -1,5 +1,5 @@
 </main>
-<footer class="footer jumbotron jumbotron-fluid mb-0 mt-5 py-2 darkBg text-center">
+<footer class="footer jumbotron-fluid mb-0 mt-5 py-2 darkBg text-center">
   <div class="container">
     <p class="lead">Application servant à évaluer le niveau de l'étudiant avant l'entrée en formation.</p>
     <i class="far fa-envelope"></i> <a href="mailto:contact@adep-roubaix.fr?subject=Renseignements">contact@labanque.fr</a>

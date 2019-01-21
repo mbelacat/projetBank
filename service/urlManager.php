@@ -48,4 +48,20 @@ function redirectTo($target, $parameters = false) {
   header("Location: " . $url);
   exit;
 }
+
+function loadCss($file) {
+ $config = getGlobalConfig();
+ $path = "http://" . $config["host"];
+ $path .= "public/css/$file";
+ echo "<link rel='stylesheet' href='$path'>";
+}
+
+// load JS
+function loadJs($file) {
+ $config = getGlobalConfig();
+ $path = "http://" . $config["host"];
+ $path .= "public/js/$file";
+ echo "<script src='$path'></script>";
+}
+
  ?>
